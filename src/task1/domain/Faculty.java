@@ -6,15 +6,22 @@ import java.util.List;
 public class Faculty {
 	private String name;
 	private List<Subject> subjects;
+	private List<Student> students;
 	private double minGrade;
 
 	public Faculty(String name) {
 		this.name = name;
 		this.subjects = new ArrayList<>();
+		this.students = new ArrayList<>();
 	}
 
 	public Faculty addSubject(Subject subject) {
 		subjects.add(subject);
+		return this;
+	}
+
+	public Faculty addStudent(Student student) {
+		students.add(student);
 		return this;
 	}
 
@@ -29,6 +36,10 @@ public class Faculty {
 
 	public List<Subject> getSubjects() {
 		return subjects;
+	}
+
+	public List<Student> getStudents() {
+		return students;
 	}
 
 	public double getMinGrade() {
